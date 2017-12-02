@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 
-package model;
+package View;
 
 /**
  *
- * @author win 10
+ * @author
  */
 public class formRegistrasi extends javax.swing.JFrame {
 
@@ -38,7 +38,7 @@ public class formRegistrasi extends javax.swing.JFrame {
         male = new javax.swing.JRadioButton();
         female = new javax.swing.JRadioButton();
         cabang = new javax.swing.JLabel();
-        Cabang = new javax.swing.JComboBox<String>();
+        Cabang = new javax.swing.JComboBox<>();
         output = new javax.swing.JLabel();
         HANDUK = new javax.swing.JLabel();
         Kecil = new javax.swing.JCheckBox();
@@ -48,7 +48,7 @@ public class formRegistrasi extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         Hasil = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
-        reguler = new javax.swing.JList<String>();
+        reguler = new javax.swing.JList<>();
         Alamat = new javax.swing.JLabel();
 
         jTextArea2.setColumns(20);
@@ -71,6 +71,12 @@ public class formRegistrasi extends javax.swing.JFrame {
             }
         });
 
+        Ktp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KtpActionPerformed(evt);
+            }
+        });
+
         jLabel6.setText("Jenis Kelamin");
 
         male.setText("Male");
@@ -84,7 +90,7 @@ public class formRegistrasi extends javax.swing.JFrame {
 
         cabang.setText("Cabang");
 
-        Cabang.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "CICADAS", "DAGO", "SUKAJADI", "CIBIRU" }));
+        Cabang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CICADAS", "DAGO", "SUKAJADI", "CIBIRU" }));
 
         output.setText("Output :");
 
@@ -102,15 +108,20 @@ public class formRegistrasi extends javax.swing.JFrame {
         PaketFitness.setText("Paket Fitness");
 
         Simpan.setText("Simpan");
+        Simpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SimpanActionPerformed(evt);
+            }
+        });
 
         Hasil.setColumns(20);
         Hasil.setRows(5);
         jScrollPane3.setViewportView(Hasil);
 
-        reguler.setModel(new javax.swing.AbstractListModel() {
+        reguler.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Reguler", "Mahasiswa", "Private", "Premium" };
             public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
+            public String getElementAt(int i) { return strings[i]; }
         });
         jScrollPane4.setViewportView(reguler);
 
@@ -179,7 +190,6 @@ public class formRegistrasi extends javax.swing.JFrame {
                 .addComponent(Fitlife)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Alamat)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -235,6 +245,14 @@ public class formRegistrasi extends javax.swing.JFrame {
     private void KecilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KecilActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_KecilActionPerformed
+
+    private void KtpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KtpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_KtpActionPerformed
+
+    private void SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SimpanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SimpanActionPerformed
 
     /**
      * @param args the command line arguments
