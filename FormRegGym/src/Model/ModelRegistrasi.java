@@ -1,4 +1,4 @@
-package model;
+package Model;
 
 import View.formRegistrasi;
 
@@ -6,15 +6,13 @@ import View.formRegistrasi;
  *
  * @author
  */
-
-
-public class Model {
+public class ModelRegistrasi {
 
     /**
      * @param args the command line arguments
      */
-    private String noKTP, nama, kelamin = "", cabang, handuk = "", paket,
-            biaya = "";
+    private String noKTP, nama, kelamin = "", cabang, handuk = "", paket;
+    private double biaya = 0;
 
     public String getNoKTP() {
         return noKTP;
@@ -64,17 +62,35 @@ public class Model {
         this.paket = paket;
     }
 
-    public String getBiaya() {
+    public double getBiaya() {
         return biaya;
     }
 
-    public void setBiaya(String biaya) {
+    public void setBiaya(Double biaya) {
         this.biaya = biaya;
     }
 
-    
+    public void biayaPaket() {
+        switch (paket) {
+            case "Reguler":
+                biaya = 450000;
+                break;
+            case "Mahasiswa":
+                biaya = 300000;
+                break;
+            case "Private":
+                biaya = 750000;
+                break;
+            case "Premium":
+                biaya = 1000000;
+                break;
+            default:
+                break;
+        }
+    }
+
     public static void main(String[] args) {
         // main program hire
-         new formRegistrasi().setVisible(true);   
+        new formRegistrasi().setVisible(true);
     }
 }
